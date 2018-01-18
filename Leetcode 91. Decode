@@ -1,0 +1,36 @@
+设状态A[i]表示字符串前i个字符能表示的解码个数。那么它依赖于A[i-1]和A[i-2]。具体的依赖关系如下图：
+1. s[i] =='0', 那么第i-1 == 1||2， 这时0只能和前一项结合，被看成一项。 所以A[i] = A[i-2].
+其他则被返回0
+2. s[i-1] == '1' ||s[i-1] =='2' && s[i] <='6' 这时i项可以独立，也可以和i-1项结合所以 A[i] = A[i-1] +A[i-2]
+3.其他情况， s[i] !='0', 并且情况2不成立， 返回'0'
+runtime:4ms
+class Solution {  
+public:  
+    int numDecodings(string s) {  
+        int length=s.size();  
+        if(length==0)  
+            return 0;  
+              
+        int current=s[0]=='0'?0:1;  
+        int last=1;  
+        for(int i=1;i<length;i++)  
+        {  
+            int tmp=current;  
+            if(s[i]=='0')  
+            {  
+                if(s[i-1]=='1'||s[i-1]=='2')  
+                     current=last;  
+                else   
+                    return 0;  
+            }  
+            else if(s[i-1]=='1'||s[i-1]=='2'&&s[i]<='6')  
+                current+=last;  
+            else   
+                current=current;  
+              
+            last=tmp;  
+        }  
+          
+        return current;  
+    }  
+}; 
