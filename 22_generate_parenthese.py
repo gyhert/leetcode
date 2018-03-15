@@ -11,4 +11,20 @@ class Solution:
                 backtrack(S + ')', left, right + 1)
             backtrack()
             return ans
+        
+class solution2(object):
+    def generateParenthese(self, n):
+        if n == 0:
+            return ['']
+        ans = []
+        for c in range(n):
+            for left in self.generateParenthese(c):
+                for right in self.generateParenthese(n-1-c):
+                    ans.append('({}){}'.format(left,right))
+        return ans
+
+
+
+
+
 
