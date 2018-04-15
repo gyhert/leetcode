@@ -1,3 +1,5 @@
+package leetcode;
+
 public class BinaryTreeInoder94 {
     public list<Integer> inorderTraversal(TreeNode root) {
         linkedList<Integer> res = new LinkedList<Integer>();

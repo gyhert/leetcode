@@ -1,3 +1,5 @@
+package leetcode;
+
 public class CanPlaceFlower605 {
     public static void main(String[] arg) {
         int[] flower = [0, 0, 1, 0, 1, 0, 0, 0, 0, 1];
