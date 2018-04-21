@@ -8,6 +8,7 @@ public class ConstructbinarytoString606 {
         if(t.left == null && t.right == null){
             return t.val + "";
         }
+        //after that if left == null, then right will not null, and vs
         if(t.left == null){
             return t.val + "()" + "(" + tree2str(t.right) + ")";
         }
