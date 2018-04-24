@@ -1,12 +1,6 @@
 package leetcode;
 
 public class CanPlaceFlower605 {
-    public static void main(String[] arg) {
-        int[] flower = [0, 0, 1, 0, 1, 0, 0, 0, 0, 1];
-        int t = 4;
-        return canPlaceFlowers(flower, t);
-    }
-
     public boolean canPlaceFlowers(int[] flowerbed, int n){
         int count = 0;
         for(int i = 0; i < flowerbed.length && count < n; i++){
