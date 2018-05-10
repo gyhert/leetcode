@@ -1,9 +1,13 @@
 package leetcode;
-
+import java.util.LinkedList;
+import java.util.List;
+import MutableTreeNode;
 public class BinaryTreeInoder94 {
     public list<Integer> inorderTraversal(TreeNode root) {
         linkedList<Integer> res = new LinkedList<Integer>();
-        if(root == null) return res;
+        if(root == null) {
+            return res;
+        }
         DFS(root, res);
         return res;
 
@@ -14,4 +18,9 @@ public class BinaryTreeInoder94 {
         list.add(node.val);
         DFS(node.right, list);
     }
+    /**
+    public static void main(String [] args){
+        System.out.println("hellow world!!");
+    }
 }
+     */
