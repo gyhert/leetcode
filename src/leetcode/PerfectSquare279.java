@@ -1,4 +1,3 @@
-
 package leetcode;
 import java.util.Arrays;
 public class PerfectSquare279 {
@@ -14,7 +13,7 @@ public class PerfectSquare279 {
         return dp[n];
     }
     public static void main(String [] args ) {
-        int s = 13;
+        int s = 4;
         PerfectSquare279 t = new PerfectSquare279();
         System.out.println(t.numSquares(s));
     }
